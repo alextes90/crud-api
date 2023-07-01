@@ -3,9 +3,7 @@
 ### How to instal
 
     git clone git@github.com:alextes90/crud-api.git
-
     git checkout crud-api
-
     npm i
 
 ### How to run
@@ -27,6 +25,8 @@
     npm test
 
 ## Api
+
+### http://localhost:3000 - base url
 
 ### "/api/users" - end point
 

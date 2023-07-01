@@ -41,8 +41,6 @@ const server = createServer(async (req, res) => {
     res.write(JSON.stringify(`${err}`));
     res.end();
   }
-  console.log("method:", method);
-  console.log("url:", url);
 });
 
 server.listen(PORT, () => {
