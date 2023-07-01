@@ -32,14 +32,14 @@ npm test
 
 Methods:
 
-"GET" - get all users
-"POST" - create new user
+"GET" - get all users  
+"POST" - create new user  
 ({username: string!, age: number!, hobbies: string[]!})
 
 ### "/api/users/{uuid} - end point
 
 Methods:
-"Get" - get user by uuid
-"PUT" - update user info by uuid
-({username: string!, age: number!, hobbies: string[]!})
+"Get" - get user by uuid  
+"PUT" - update user info by uuid  
+({username: string!, age: number!, hobbies: string[]!})  
 "DELETE" - delete user by uuid
