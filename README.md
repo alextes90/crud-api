@@ -2,29 +2,29 @@
 
 ### How to instal
 
-git clone git@github.com:alextes90/crud-api.git
+    git clone git@github.com:alextes90/crud-api.git
 
-git checkout crud-api
+    git checkout crud-api
 
-npm i
+    npm i
 
 ### How to run
 
 #### Dev mode
 
-npm run start:dev
+    npm run start:dev
 
 #### Prod mode
 
-npm run start:prod
+    npm run start:prod
 
 #### Run with balancer
 
-npm run start:multi
+    npm run start:multi
 
 #### Tests
 
-npm test
+    npm test
 
 ## Api
 
@@ -32,14 +32,34 @@ npm test
 
 Methods:
 
-"GET" - get all users  
-"POST" - create new user  
-({username: string!, age: number!, hobbies: string[]!})
+"GET" - get all users
+
+"POST" - create new user
+
+```
+{ username: string!,
+
+age: number!,
+
+hobbies: string[]!}
+
+```
 
 ### "/api/users/{uuid} - end point
 
 Methods:
-"Get" - get user by uuid  
-"PUT" - update user info by uuid  
-({username: string!, age: number!, hobbies: string[]!})  
+
+"Get" - get user by uuid
+
+"PUT" - update user info by uuid
+
+```
+{ username: string!,
+
+age: number!,
+
+hobbies: string[]!}
+
+```
+
 "DELETE" - delete user by uuid
