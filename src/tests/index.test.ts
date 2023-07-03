@@ -106,13 +106,17 @@ describe('testing crud-api (2nd scenario)', () => {
 
 describe('testing crud-api (3d scenario)', () => {
   test('Create 3 users', async () => {
-    await Promise.all(
-      [...Array(3).keys()].map(async () => {
-        return await request('http://localhost:8080')
-          .post('/api/users')
-          .send(data);
-      })
-    );
+    // TODO THINK HOW TO REALIZE
+    // const response = await Promise.all(
+    //   [...Array(3).keys()].map(async () => {
+    //     return await request('http://localhost:8080')
+    //       .post('/api/users')
+    //       .send(data);
+    //   })
+    // );
+    await request('http://localhost:8080').post('/api/users').send(data);
+    await request('http://localhost:8080').post('/api/users').send(data);
+    await request('http://localhost:8080').post('/api/users').send(data);
   });
   test('3 users should be created', async () => {
     const response = await request('http://localhost:8080').get('/api/users');

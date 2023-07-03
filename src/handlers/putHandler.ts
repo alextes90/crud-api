@@ -4,13 +4,11 @@ import { bodyParser } from '../utils/bodyParser';
 import { validate } from 'uuid';
 import { BASE_API } from '../constants';
 
-export const putHandler = async (
-  req: IncomingMessage,
-  res: ServerResponse,
-  db: User[]
-) => {
+export const putHandler = async (req: IncomingMessage, res: ServerResponse) => {
   const userId = req.url?.slice(BASE_API.length + 1) || '';
   const isValidUuid = validate(userId);
+  const response = await fetch('http://localhost:3001');
+  const db = await response.json();
 
   if (!isValidUuid) {
     {
@@ -36,6 +34,14 @@ export const putHandler = async (
         res.end();
       } else {
         db[updatedUserIndex] = { id: userId, ...validBody };
+        const newDb = [...db];
+        await fetch('http://localhost:3001', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(newDb),
+        });
         res.writeHead(200, { 'Content-Type': 'application/json' });
         res.write(
           JSON.stringify({

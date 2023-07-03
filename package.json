@@ -4,10 +4,11 @@
   "description": "",
   "main": "src/index.ts",
   "scripts": {
+    "build": "webpack --config ./webpack.config.js",
     "start": "ts-node src/index.ts",
     "start:dev": "nodemon",
-    "start:prod": "tsc && node build/index.js",
-    "start:multi": "tsc && node build/index.js -- multi",
+    "start:prod": "npm run build && node build/index.js",
+    "start:multi": "npm run build && node build/index.js -- multi",
     "start:dev-multi": "nodemon -- multi",
     "start-server": "cross-env PORT=8080 npm run start",
     "test": "jest",
@@ -26,8 +27,11 @@
     "start-server-and-test": "^2.0.0",
     "supertest": "^6.3.3",
     "ts-jest": "^29.1.1",
+    "ts-loader": "^9.4.4",
     "ts-node": "^10.9.1",
-    "typescript": "^5.1.6"
+    "typescript": "^5.1.6",
+    "webpack": "^5.88.1",
+    "webpack-cli": "^5.1.4"
   },
   "dependencies": {
     "dotenv": "^16.3.1",
