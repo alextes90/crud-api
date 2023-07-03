@@ -24,7 +24,7 @@ export const bodyValidator = (body: ValidBody) => {
     ) {
       isCorrect = false;
     }
-    if (hobbies.length > 0) {
+    if (hobbies.length > 0 && Array.isArray(hobbies)) {
       hobbies.forEach((hobby) => {
         if (typeof hobby === "string") return;
         isCorrect = false;

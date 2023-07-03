@@ -34,14 +34,14 @@ Methods:
 
 "GET" - get all users
 
-"POST" - create new user
+"POST" - create new user (all fields mandatory)
 
 ```
-{ username: string!,
+{ "username": string!,
 
-age: number!,
+"age": number!,
 
-hobbies: string[]!}
+"hobbies": string[]!}
 
 ```
 
@@ -51,14 +51,14 @@ Methods:
 
 "Get" - get user by uuid
 
-"PUT" - update user info by uuid
+"PUT" - update user info by uuid (all fields mandatory)
 
 ```
-{ username: string!,
+{ "username": string!,
 
-age: number!,
+"age": number!,
 
-hobbies: string[]!}
+"hobbies": string[]!}
 
 ```
 

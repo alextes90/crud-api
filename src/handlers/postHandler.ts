@@ -2,6 +2,7 @@ import { IncomingMessage, ServerResponse } from "http";
 import { User } from "../type";
 import { bodyParser } from "../utils/bodyParser";
 import { v4 } from "uuid";
+import { BASE_API } from "../constants";
 
 export const postHandler = async (
   req: IncomingMessage,
@@ -9,7 +10,11 @@ export const postHandler = async (
   db: User[]
 ) => {
   const validBody = await bodyParser(req);
-  if (!validBody) {
+  if (req.url !== BASE_API) {
+    res.writeHead(400, { "Content-Type": "application/json" });
+    res.write(JSON.stringify(`incorrect path, should be ${BASE_API}`));
+    res.end();
+  } else if (!validBody) {
     res.writeHead(400, { "Content-Type": "application/json" });
     res.write(
       JSON.stringify(
@@ -22,7 +27,7 @@ export const postHandler = async (
     res.writeHead(201, { "Content-Type": "application/json" });
     res.write(
       JSON.stringify({
-        data: validBody,
+        data: { id: v4(), ...validBody },
       })
     );
     res.end();

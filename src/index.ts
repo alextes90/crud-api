@@ -30,10 +30,14 @@ const server = createServer(async (req, res) => {
         case "DELETE":
           deleteHandler(req, res, db);
           break;
+        default:
+          res.writeHead(500, { "Content-Type": "application/json" });
+          res.write(JSON.stringify("Method is not implemented"));
+          res.end();
       }
     } else {
       res.writeHead(404, { "Content-Type": "application/json" });
-      res.write(JSON.stringify("404 Not Found\n"));
+      res.write(JSON.stringify("404 Not Found"));
       res.end();
     }
   } catch (err) {
