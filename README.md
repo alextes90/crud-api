@@ -22,7 +22,7 @@
 
 #### Tests
 
-    npm test
+    npm test:api
 
 ## Api
 
