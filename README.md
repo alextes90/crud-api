@@ -24,7 +24,7 @@ Rename .env.example to .env
 
 #### Tests
 
-    npm test:api
+     npm run test:api
 
 ## Api
 
