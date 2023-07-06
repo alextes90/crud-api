@@ -6,7 +6,7 @@
     git checkout crud-api
     npm i
 
-In .env put PORT=4000
+Rename .env.example to .env
 
 ### How to run
 
