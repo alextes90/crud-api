@@ -6,6 +6,8 @@
     git checkout crud-api
     npm i
 
+In .env put PORT=4000
+
 ### How to run
 
 #### Dev mode
