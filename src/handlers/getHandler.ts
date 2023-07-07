@@ -7,6 +7,8 @@ export const getHandler = async (req: IncomingMessage, res: ServerResponse) => {
   const response = await fetch('http://localhost:3001');
   const db = await response.json();
 
+  throw Error;
+
   if (req.url === BASE_API) {
     res.writeHead(200, { 'Content-Type': 'application/json' });
     res.write(
